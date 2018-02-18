@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title></title>
+    <link rel=”stylesheet” href=”style.css” />
+    </head>
+    <body>
+        <button>ROZPOCZNIJ LOSOWANIE</button>
+    </body>
+    </html>
+    <script>
+        const button = document.querySelector("button");
+
+        function draw () {
+            
+            alert("NASTĘPUJE ZWOLNIENIE BLOKADY\nROZPOCZYNAM LOSOWANIE");
+
+            for (var i = 0; i <= 5; i++ ) {
+                const div = document.createElement("div");
+                const wynikLosowania =  Math.floor(Math.random() * 49 + 1);
+                
+                function creatingBall () {
+                    
+
+                    div.textContent = wynikLosowania;
+                    document.body.appendChild(div);
+                }
+                
+                function showingBall () {
+                    setInterval(creatingBall, 2000);
+                }
+                showingBall();
+                
+            }
+        }
+
+
+        button.addEventListener("click", draw);
+        
+        
+    
+
+
+    </script>
+</body>
+
+
+
+</html>
