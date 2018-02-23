@@ -1,19 +1,14 @@
+```
 <!DOCTYPE html>
-<head>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <!DOCTYPE html>
-    <html>
+<html>
     <head>
-    <title></title>
-    <link rel=”stylesheet” href=”style.css” />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+<body>
         <button>ROZPOCZNIJ LOSOWANIE</button>
-    </body>
-    </html>
+
+    
     <script>
         const button = document.querySelector("button");
         button.addEventListener("click", start);
@@ -21,19 +16,21 @@
 
             function draw() {
                 const div = document.createElement("div");
+                div.setAttribute('class', 'fadeInRight animated');
+
                 const wynikLosowania =  Math.floor(Math.random() * 49 + 1);
-                
+
                 function creatingBall () {
                 div.textContent = wynikLosowania;
                 let inDiv = document.body.appendChild(div);
-                } 
+                }
                 creatingBall();
             }
 
         function start () {
             for (i = 0; i <= 5; i++ ) {
                 console.log('wyświetliło się ' + i );
-                setTimeout(draw, 2000);
+                setTimeout(draw, 2000 * i);
            }
         }
     </script>
